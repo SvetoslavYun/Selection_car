@@ -1,0 +1,88 @@
+﻿<Window x:Class="Selection_car.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Selection_car"
+        mc:Ignorable="d"
+        Title="Главное меню"
+      ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen" 
+    Width="1000" Height="606" >
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Button.Margin" Value="5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" RecognizesAccessKey="True"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="Cyan" />
+                                <Setter Property="Cursor" Value="Hand" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFFBCE8D" Offset="0.947"/>
+                <GradientStop Color="#FFFBC25D"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnFillCalculator" Click="btnFill_ClickCalculator" Background="#FF2B2624" Grid.ColumnSpan="2" Margin="636,263,148,223">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Selection_car;component/OrderCars/3c0de3fec9ab8a3df01109251f137119.png" Stretch="Uniform"/>
+            </Button.OpacityMask>
+        </Button>
+        <Button x:Name="btnFillArea" Click="btnFill_ClickArea"  Background="#FF1B1B1A" Grid.ColumnSpan="2" Margin="636,419,148,67">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Selection_car;component/OrderCars/img_522842.png" Stretch="Uniform"/>
+            </Button.OpacityMask>
+        </Button>
+        <Button x:Name="btnFillOrder" Click="btnFill_ClickOrder" Grid.ColumnSpan="2" Margin="636,123,148,363" BorderBrush="#FF494141" Background="#FF2E2A2A">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="dostavk.png" Stretch="Uniform"/>
+            </Button.OpacityMask>
+        </Button>
+        <Button x:Name="btnFillCar" Click="btnFill_ClickCar" Background="#FF252121" Grid.ColumnSpan="2" Margin="157,263,627,223">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Selection_car;component/OrderCars/truck-clipart-png-7.png" Stretch="Uniform"/>
+            </Button.OpacityMask>
+        </Button>
+        <Button x:Name="btnFillDriver" Click="btnFill_ClickDriver" Background="#FF1D1C1B" Grid.ColumnSpan="2" Margin="157,419,627,67">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Selection_car;component/OrderCars/f84fea65c2ccf4aa0b3a0a66f9a06c6a.png" Stretch="Uniform"/>
+            </Button.OpacityMask>
+        </Button>
+        <Button x:Name="btnFillCompani" Click="btnFill_ClickCompani" Grid.ColumnSpan="2" Margin="157,123,627,363" Background="#FF2C2727">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Selection_car;component/OrderCars/complect3.png" Stretch="Uniform"/>
+            </Button.OpacityMask>
+        </Button>
+        <Button x:Name="btnFillUser" Click="btnFill_ClickUser" Background="#FF272421" Grid.ColumnSpan="2" Margin="404,35,380,451">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="4ec8aa581db49dc9b983c877ce8c85aa.png" Stretch="Uniform"/>
+            </Button.OpacityMask>
+        </Button>
+        <TextBlock Margin="454,126,422,419" TextWrapping="Wrap" Text="Пользователи" RenderTransformOrigin="0.583,0.463" TextDecorations="{x:Null}" FontFamily="Times New Roman" FontSize="16" Grid.Column="1" Foreground="#FF2B2828" FontWeight="Bold" FontStyle="Italic" />
+        <TextBlock Margin="211,214,665,331" TextWrapping="Wrap" Text="Организации" RenderTransformOrigin="0.583,0.463" TextDecorations="{x:Null}" FontFamily="Times New Roman" FontSize="16" Grid.Column="1" Foreground="#FF2B2828" FontWeight="Bold" FontStyle="Italic" />
+        <TextBlock Margin="211,354,602,191" TextWrapping="Wrap" Text="Автотранспорт" RenderTransformOrigin="0.583,0.463" TextDecorations="{x:Null}" FontFamily="Times New Roman" FontSize="16" Grid.Column="1" Foreground="#FF2B2828" FontWeight="Bold" FontStyle="Italic" />
+        <TextBlock Margin="211,510,694,35" TextWrapping="Wrap" Text="Водители" RenderTransformOrigin="0.583,0.463" TextDecorations="{x:Null}" FontFamily="Times New Roman" FontSize="16" Grid.Column="1" Foreground="#FF2B2828" FontWeight="Bold" FontStyle="Italic" />
+        <TextBlock Margin="686,214,84,331" TextWrapping="Wrap" Text="Заказ автотранспорта" RenderTransformOrigin="0.583,0.463" TextDecorations="{x:Null}" FontFamily="Times New Roman" FontSize="16" Grid.Column="1" Foreground="#FF2B2828" FontWeight="Bold" FontStyle="Italic" />
+        <TextBlock Margin="686,354,84,191" TextWrapping="Wrap" Text="Калькулятор рейсов" RenderTransformOrigin="0.583,0.463" TextDecorations="{x:Null}" FontFamily="Times New Roman" FontSize="16" Grid.Column="1" Foreground="#FF2B2828" FontWeight="Bold" FontStyle="Italic" />
+        <TextBlock Margin="686,510,84,35" TextWrapping="Wrap" Text="Марщруты" RenderTransformOrigin="0.583,0.463" TextDecorations="{x:Null}" FontFamily="Times New Roman" FontSize="16" Grid.Column="1" Foreground="#FF2B2828" FontWeight="Bold" FontStyle="Italic" />
+    </Grid>
+</Window>

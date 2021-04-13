@@ -1,0 +1,181 @@
+﻿<Window x:Class="Selection_car.CalculatorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Selection_car"
+        mc:Ignorable="d" 
+        Title="Калькулятор рейсов"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen" 
+    Width="1366" Height="768"
+    WindowState="Maximized" >
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Button.Margin" Value="5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" RecognizesAccessKey="True"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="Cyan" />
+                                <Setter Property="Cursor" Value="Hand" />
+                                <!-- If we don't tell the background to change on hover, it will remain the same -->
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFFBCE8D" Offset="0.392"/>
+                <GradientStop Color="#FFFBC25D"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="945*"/>
+            <ColumnDefinition Width="278*"/>
+            <ColumnDefinition Width="0"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid x:Name="lBox" ItemsSource="{Binding}" 
+        AutoGenerateColumns="False" CanUserAddRows="False" LoadingRow="dGrid_LoadingRow" RowHeaderWidth="50" Background="#FFFAFDE1" Margin="30,49,0,0" Grid.Row="1" HorizontalAlignment="Left" Width="1187" Grid.Column="1" Height="354" VerticalAlignment="Top" Grid.ColumnSpan="2" FontFamily="Times New Roman" FontSize="14">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Организация" IsReadOnly="True" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Водитель" IsReadOnly="True" Binding="{Binding Driver}" Width="*"/>
+                <DataGridTextColumn Header="Гос.номер" IsReadOnly="True" Binding="{Binding Number}" Width="*"/>
+                <DataGridTextColumn Header="Вид перевозки" IsReadOnly="True" Binding="{Binding Type}" Width="*"/>
+                <DataGridTextColumn Header="Маршрут" Binding="{Binding Are}" Width="*"/>
+                <DataGridTextColumn Header="Дата" IsReadOnly="True" Binding="{Binding Data2}" Width="*"/>
+
+                <DataGridTextColumn Header="Кол.во магазинов" Binding="{Binding Shops}" Width="*"/>
+                <DataGridTextColumn Header="Кол.во кг" Binding="{Binding Tonnage}" Width="*"/>
+                <DataGridTextColumn Header="Пробег" Binding="{Binding Mileage}" Width="*"/>
+                <DataGridTextColumn Header="Цена груза" Binding="{Binding Freight}" Width="*"/>
+                <DataGridTextColumn Header="Заработок" IsReadOnly="True" Binding="{Binding Earned}" Width="*" Foreground="#FF2E5704" FontWeight="Bold" FontFamily="Times New Roman" FontSize="14"/>
+                <DataGridTextColumn Header="Затраты" IsReadOnly="True" Binding="{Binding Expenses}" Width="*" Foreground="#FF800808" FontSize="14" FontWeight="Bold" FontFamily="Times New Roman"/>
+                <DataGridTextColumn Header="Прибыль" IsReadOnly="True" Binding="{Binding Profit}" Width="*" Foreground="#FF0710DE" FontSize="14" FontFamily="Times New Roman" FontWeight="Bold"/>
+                <DataGridTextColumn Header="Рентабельность" IsReadOnly="True" Binding="{Binding Profitability}" Width="*" Foreground="#FF0E0D0D" FontWeight="Bold" FontSize="14" FontFamily="Times New Roman"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button
+                  x:Name="btnEdit_Click" Background="#FF131213" Width="35" Height="15" Click="btnEdit_Click2" >
+                                <Button.OpacityMask>
+                                    <ImageBrush ImageSource="/Selection_car;component/Car/img_342907.png" Stretch="Uniform"/>
+                                </Button.OpacityMask>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <ComboBox x:Name="textBox2" Margin="5,117,0,0" RenderTransformOrigin="0.526,-0.174" HorizontalAlignment="Left" Width="160" Grid.Row="1" FontFamily="Times New Roman" FontSize="14" Grid.ColumnSpan="2" Height="26" VerticalAlignment="Top"/>
+        <ComboBox x:Name="ViewCalculator" Text="{Binding Path=ViewCalculator}" Margin="5,184,0,0" Height="26" VerticalAlignment="Top" RenderTransformOrigin="0.526,-0.174" HorizontalAlignment="Left" Width="160" Grid.Row="1" FontFamily="Times New Roman" FontSize="14" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="ViewType" Text="{Binding Path=ViewType}" Margin="5,62,0,0" Height="27" VerticalAlignment="Top" RenderTransformOrigin="0.526,-0.174" HorizontalAlignment="Left" Width="160" Grid.Row="1" FontFamily="Times New Roman" FontSize="14" Grid.ColumnSpan="2"/>
+        <DatePicker x:Name="Data" Text="{Binding Path=Data}" Margin="5,10,0,0" RenderTransformOrigin="0.887,0.643" HorizontalAlignment="Left" Width="160" Height="26" VerticalAlignment="Top" Grid.Row="1" Grid.ColumnSpan="2" FontFamily="Times New Roman" FontSize="14"/>
+        <TextBlock Height="18" Margin="13,102,15,0" TextWrapping="Wrap" Text="Организация" VerticalAlignment="Top" Grid.RowSpan="2" FontFamily="Times New Roman" FontSize="14" FontStyle="Italic" />
+        <TextBlock Height="18" Margin="13,166,17,0" TextWrapping="Wrap" Text="Тип калькулятора" VerticalAlignment="Top" Grid.RowSpan="2" RenderTransformOrigin="0.445,0.611" FontFamily="Times New Roman" FontSize="14" FontStyle="Italic" />
+        <TextBlock Height="21" Margin="13,45,10,0" TextWrapping="Wrap" Text="Среднее значенте " VerticalAlignment="Top" Grid.RowSpan="2" RenderTransformOrigin="0.533,0.3" FontFamily="Times New Roman" FontSize="14" FontStyle="Italic" />
+        <TextBlock Height="18" Margin="797,0,10,0" TextWrapping="Wrap" Text="Общие показатели " VerticalAlignment="Top" Grid.RowSpan="2" RenderTransformOrigin="0.533,0.3" FontFamily="Times New Roman" FontSize="16" FontStyle="Italic" Grid.Column="1" FontWeight="Bold" />
+        <Button x:Name="toEdit" Click="to_Edit" Content="Заполнить список" Background="#FFE8C06B" Margin="19,231,0,0" Grid.RowSpan="2" HorizontalAlignment="Left" Width="129" Height="25" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="14" Grid.ColumnSpan="2"/>
+        <TextBlock Text="День" Margin="13,329,0,0" TextWrapping="Wrap" Height="20" VerticalAlignment="Top" Grid.RowSpan="2" RenderTransformOrigin="0.828,0.55" HorizontalAlignment="Left" Width="29" FontFamily="Times New Roman" FontSize="14"><Run /></TextBlock>
+        <TextBlock Text="Месяц" Margin="62,329,0,0" TextWrapping="Wrap" Height="20" VerticalAlignment="Top" Grid.RowSpan="2" RenderTransformOrigin="0.167,0.45" HorizontalAlignment="Left" Width="42" FontFamily="Times New Roman" FontSize="14"><Run /></TextBlock>
+        <TextBlock Text="Год" Margin="128,329,0,0" TextWrapping="Wrap" Height="20" VerticalAlignment="Top" Grid.RowSpan="2" HorizontalAlignment="Left" Width="42" Grid.ColumnSpan="2" FontFamily="Times New Roman" FontSize="14"><Run /></TextBlock>
+        <TextBlock Text="Расширенный поиск с диапозоном дат" Margin="5,291,0,0" TextWrapping="Wrap" Height="33" VerticalAlignment="Top" Grid.RowSpan="2" HorizontalAlignment="Left" Width="160" TextDecorations="{x:Null}" TextAlignment="Center" FontWeight="Bold" FontStyle="Italic" Grid.ColumnSpan="2" FontFamily="Times New Roman" FontSize="14"><Run /></TextBlock>
+        <ComboBox x:Name="Day" Text="{Binding Day}" Margin="5,349,0,0" Grid.Row="1" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="44" FontFamily="Times New Roman" FontSize="14"/>
+        <ComboBox x:Name="Month" Text="{Binding Month}" Margin="49,349,0,0" RenderTransformOrigin="0.044,0.543" Grid.Row="1" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="81" FontFamily="Times New Roman" FontSize="14"/>
+        <TextBox x:Name="Year" Text="{Binding Year}" Margin="130,349,0,0" Height="23" VerticalAlignment="Top" RenderTransformOrigin="0.044,0.543" Grid.Row="1" HorizontalAlignment="Left" Width="35" Grid.ColumnSpan="2" FontFamily="Times New Roman" FontSize="14"/>
+        <Button x:Name="button" Content="ОК" Grid.Row="1" Click="button_Click" Background="Azure" Height="24" VerticalAlignment="Top" Margin="39,572,5,0" FontFamily="Times New Roman" FontSize="14"/>
+        <Button x:Name="button3" Content="Статистика водителей" Grid.Row="1" Click="button_Click3" Background="#FFD8E2E4" Height="28" VerticalAlignment="Top" Margin="5,612,920,0" FontFamily="Times New Roman" FontSize="14" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="Day2" Text="{Binding Day2}" Margin="5,408,91,0" Height="23" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.833,0.391" FontFamily="Times New Roman" FontSize="14"/>
+        <ComboBox x:Name="Month2" Text="{Binding Month2}" Margin="49,408,0,0" RenderTransformOrigin="0.044,0.543" Grid.Row="1" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="81" FontFamily="Times New Roman" FontSize="14"/>
+        <TextBox x:Name="Year2" Text="{Binding Year2}" Margin="128,408,0,0" Height="23" VerticalAlignment="Top" RenderTransformOrigin="0.044,0.543" Grid.Row="1" HorizontalAlignment="Left" Width="35" Grid.ColumnSpan="2" FontFamily="Times New Roman" FontSize="14"/>
+        <ComboBox x:Name="Name" 
+            IsEditable="True" DropDownOpened ="comboBox_Name_DropDownOpened"  Margin="5,473,0,0" Grid.Row="1" HorizontalAlignment="Left" Width="160" Height="24" VerticalAlignment="Top" Grid.ColumnSpan="2" FontFamily="Times New Roman" FontSize="14"/>
+        <ComboBox x:Name="Driver" 
+            IsEditable="True" DropDownOpened ="comboBox_Driver_DropDownOpened"  Margin="5,531,0,0" Grid.Row="1" HorizontalAlignment="Left" Width="160" Height="22" VerticalAlignment="Top" Grid.ColumnSpan="2" FontFamily="Times New Roman" FontSize="14"/>
+        <TextBlock Text="Организация" Margin="13,453,0,0" TextWrapping="Wrap" Height="20" VerticalAlignment="Top" Grid.RowSpan="2" HorizontalAlignment="Left" Width="75" FontFamily="Times New Roman" FontSize="14" FontStyle="Italic"><Run /></TextBlock>
+        <TextBlock Text="Водитель" Margin="13,511,0,0" TextWrapping="Wrap" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75" Grid.Row="1" FontFamily="Times New Roman" FontSize="14" FontStyle="Italic"><Run /></TextBlock>
+        <DataGrid x:Name="lBox_Copy" ItemsSource="{Binding}" 
+            AutoGenerateColumns="False"  CanUserAddRows="False" RowHeaderWidth="50" Background="#FFFAFDE1" Margin="546,21,0,0" Grid.Row="1" HorizontalAlignment="Left" Width="622" Grid.Column="1" Height="22" VerticalAlignment="Top" Grid.ColumnSpan="2" HeadersVisibility="None" FontFamily="Times New Roman" FontSize="16">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Кол.во магазинов" Binding="{Binding Shops}" Width="*"/>
+                <DataGridTextColumn Header="Кол.во кг" Binding="{Binding Tonnage}" Width="*"/>
+                <DataGridTextColumn Header="Пробег" Binding="{Binding Mileage}" Width="*"/>
+                <DataGridTextColumn Header="Цена груза" Binding="{Binding Freight}" Width="*"/>
+                <DataGridTextColumn Header="Заработок"  IsReadOnly="True" Binding="{Binding Earned}" Width="*"  Foreground="#FF31342E" FontWeight="Bold" FontFamily="Times New Roman" FontSize="14"/>
+                <DataGridTextColumn Header="Затраты" IsReadOnly="True" Binding="{Binding Expenses}" Width="*" Foreground="#FFF00A0A" FontSize="14" FontWeight="Bold" FontFamily="Times New Roman"/>
+                <DataGridTextColumn Header="Прибыль" IsReadOnly="True" Binding="{Binding Profit}" Width="*" Foreground="#FF0710DE" FontSize="14" FontFamily="Times New Roman" FontWeight="Bold"/>
+                <DataGridTextColumn Header="Рентабельность" IsReadOnly="True" Binding="{Binding Profitability}" Width="*" Foreground="#FF0E0D0D" FontWeight="Bold" FontSize="14" FontFamily="Times New Roman"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnFillCompani" Click="btnFill_ClickCompani" Background="#FF252421" Margin="32,9,0,0" Grid.RowSpan="2" Height="34" VerticalAlignment="Top" FontFamily="Times New Roman" Grid.Column="1" HorizontalAlignment="Left" Width="88" FontSize="14">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="complect3.png" Stretch="Uniform"/>
+            </Button.OpacityMask>
+        </Button>
+        <Button x:Name="btnFillCar" Click="btnFill_ClickCar" Background="#FF252020" Margin="290,9,0,0" Grid.RowSpan="2" Height="34" VerticalAlignment="Top" FontFamily="Times New Roman" Grid.Column="1" HorizontalAlignment="Left" Width="75" FontSize="14">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="truck-clipart-png-7.png" Stretch="Uniform"/>
+            </Button.OpacityMask>
+        </Button>
+        <Button x:Name="btnFillAreas" Click="btnFill_ClickAreas" Background="#FF232120" Margin="434,10,0,0" Grid.RowSpan="2" Height="34" VerticalAlignment="Top" FontFamily="Times New Roman" Grid.Column="1" HorizontalAlignment="Left" Width="70" FontSize="14">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="img_522842.png" Stretch="Uniform"/>
+            </Button.OpacityMask>
+        </Button>
+        <Button x:Name="btnFillDriver" Click="btnFill_Driver" Background="#FF272424" Margin="174,9,0,0" Grid.RowSpan="2" Height="34" VerticalAlignment="Top" FontFamily="Times New Roman" Grid.Column="1" HorizontalAlignment="Left" Width="51" FontSize="14" RenderTransformOrigin="0.274,0.55">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="f84fea65c2ccf4aa0b3a0a66f9a06c6a.png" Stretch="Uniform"/>
+            </Button.OpacityMask>
+        </Button>
+        <DataGrid x:Name="lBox2" ItemsSource="{Binding}" 
+            AutoGenerateColumns="False" CanUserAddRows="False" LoadingRow="dGrid_LoadingRow" RowHeaderWidth="50" Background="#FFFAFDE1" Margin="30,408,0,0" Grid.Row="1" HorizontalAlignment="Left" Width="1187" Grid.Column="1" Height="321" VerticalAlignment="Top" Grid.ColumnSpan="2" FontFamily="Times New Roman" FontSize="14">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Организация" IsReadOnly="True" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Водитель" IsReadOnly="True" Binding="{Binding Driver}" Width="*"/>
+                <DataGridTextColumn Header="Кол.во магазинов" Binding="{Binding Shops}" Width="*"/>
+                <DataGridTextColumn Header="Кол.во кг" Binding="{Binding Tonnage}" Width="*"/>
+                <DataGridTextColumn Header="Пробег" Binding="{Binding Mileage}" Width="*"/>
+                <DataGridTextColumn Header="Цена груза" Binding="{Binding Freight}" Width="*"/>
+                <DataGridTextColumn Header="Заработок" IsReadOnly="True" Binding="{Binding Earned}" Width="*" Foreground="#FF2E5704" FontWeight="Bold" FontFamily="Times New Roman" FontSize="14"/>
+                <DataGridTextColumn Header="Затраты" IsReadOnly="True" Binding="{Binding Expenses}" Width="*" Foreground="#FFF00A0A" FontSize="14" FontWeight="Bold" FontFamily="Times New Roman"/>
+                <DataGridTextColumn Header="Прибыль" IsReadOnly="True" Binding="{Binding Profit}" Width="*" Foreground="#FF0710DE" FontSize="14" FontFamily="Times New Roman" FontWeight="Bold"/>
+                <DataGridTextColumn Header="Рентабельность" IsReadOnly="True" Binding="{Binding Profitability}" Width="*" Foreground="#FF0E0D0D" FontWeight="Bold" FontSize="14" FontFamily="Times New Roman"/>
+                <DataGridTextColumn Header="К.Т.У." IsReadOnly="True" Binding="{Binding Rate}" Width="*" Foreground="#FF0E0D0D" FontWeight="Bold" FontSize="14" FontFamily="Times New Roman"/>
+                <!--<DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button
+                                x:Name="btnEdit_Click" Background="#FF131213" Width="35" Height="15" Click="btnEdit_Click2" >
+                                <Button.OpacityMask>
+                                    <ImageBrush ImageSource="/Selection_car;component/Car/img_342907.png" Stretch="Uniform"/>
+                                </Button.OpacityMask>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="button_Copy" Content="Экспорт в Excel" Margin="26,662,0,0" VerticalAlignment="Top" Grid.Row="1" Height="30" Click="button_Click7" Background="#FF9FF181" RenderTransformOrigin="0.5,1.316"/>
+    </Grid>
+</Window>

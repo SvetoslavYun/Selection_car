@@ -1,0 +1,42 @@
+﻿<Window x:Class="Selection_car.BD_Form"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Selection_car"
+        mc:Ignorable="d"
+        Title="BD_Form" Height="300" Width="300">
+    <Grid x:Name="grid" Background="#FFC0C8CA">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="103*"/>
+            <ColumnDefinition Width="190*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Введите новые данные" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,10,0,0" Height="16" Width="127" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Организация" HorizontalAlignment="Left" Margin="10,0,0,22" TextWrapping="Wrap" Width="83" Grid.Row="1" Grid.RowSpan="2"><Run /></TextBlock>
+        <TextBlock Text="Водитель" HorizontalAlignment="Left" Margin="10,10,0,22" TextWrapping="Wrap" Width="83" Grid.Row="2" Grid.RowSpan="2"><Run /></TextBlock>
+        <TextBlock Text="Марка" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.288,0.764" Grid.Row="3" Height="16" Width="83"/>
+        <TextBlock Text="Номер" HorizontalAlignment="Left" Margin="10,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="4" Height="16" Width="83"/>
+        <TextBlock Text="Тариф" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="5" Height="16" Width="83"/>
+        <ComboBox x:Name="Company" SelectionChanged ="cb_Selected" HorizontalAlignment="Left" Margin="10,4,0,0" Width="171" Grid.Row="1" Grid.Column="1" Height="23" VerticalAlignment="Top"/>
+        <TextBox x:Name="Driver" Text="{Binding Path=Driver}" HorizontalAlignment="Left" Height="18" Margin="10,0,0,26" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="171" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2"/>
+        <TextBox x:Name="Brand" Text="{Binding Path=Brand}" HorizontalAlignment="Left" Height="17" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="171" Grid.Row="3" Grid.Column="1"/>
+        <TextBox x:Name="Number" Text="{Binding Path=Number}" HorizontalAlignment="Left" Margin="10,11,0,26" TextWrapping="Wrap" Width="171" Grid.Row="4" Grid.Column="1" Grid.RowSpan="2"/>
+        <TextBox x:Name="Rate" Text="{Binding Path=Rate}" HorizontalAlignment="Left" Height="17" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" Grid.Row="5" Grid.Column="1"/>
+        <Button x:Name="button" Content="Сохранить данные" HorizontalAlignment="Left" Margin="80,0,0,0" VerticalAlignment="Top" Width="140" Grid.Row="7" Height="19" Grid.ColumnSpan="2" Click="button_Click" Background="#FF959AA0" RenderTransformOrigin="0.5,1.316"/>
+        <Button x:Name="buttonCler" Content="Очистить данные" HorizontalAlignment="Left" Margin="80,12,0,23" Width="140" Grid.Row="8" Grid.ColumnSpan="2" Click="button_Click2" Background="Red" RenderTransformOrigin="0.514,0" Grid.RowSpan="2"/>
+    </Grid>
+</Window>

@@ -1,0 +1,51 @@
+﻿<Window x:Class="Selection_car.MainWindowCar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Selection_car"
+        mc:Ignorable="d"
+        Title="MainWindowCar" Height="602" Width="1174">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Button.Margin" Value="5"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="Silver">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="123"/>
+            <ColumnDefinition Width="1040*"/>
+            <ColumnDefinition Width="0"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <Button x:Name="btnFill" Click="btnFill_Click" Content="Заполнить список" Background="#FF6F87AB"/>
+            <Button x:Name="btnAdd" Click="btnAdd__Click" Content="Добавить" Background="#FF6F87AB"/>
+            <Button x:Name="btnEdit" Click="btnEdit_Click" Content="Изменить" Background="#FF6F87AB"/>
+            <Button x:Name="btnExit" Click="bth_MainWindow" Content="Главное меню" Background="OldLace" Margin="5"/>
+            <Button x:Name="btnRemove" Click="btnRemove_Click" Content="Удалить" Background="Red"/>
+        </StackPanel>
+        <DataGrid x:Name="lBox" ItemsSource="{Binding}" 
+        AutoGenerateColumns="False" CanUserAddRows="False" LoadingRow="dGrid_LoadingRow" RowHeaderWidth="50" Background="#FFFAFDE1" Margin="0,45,0,10" Grid.Column="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№ Авто" Binding="{Binding Car_Id}">
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="№ организации" Binding="{Binding Company_Id}" Width="*"/>
+                <DataGridTextColumn Header="Организация" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Водитель" Binding="{Binding Driver}" Width="*"/>
+                <DataGridTextColumn Header="Марка" Binding="{Binding Brand}" Width="*"/>
+                <DataGridTextColumn Header="Гос. номер" Binding="{Binding Number}" Width="*"/>
+                <DataGridTextColumn Header="Тариф" Binding="{Binding Rate}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="18" Margin="10,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" RenderTransformOrigin="0.538,-1.087" Grid.Column="1"/>
+        <Button x:Name="toID_Copy2" Click="to_Click" Content="Поиск" Background="#FF6F87AB" RenderTransformOrigin="0.571,-3.4" Margin="155,22,0,0" Height="18" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Left" Width="82"/>
+        <Button x:Name="toDelet" Click="to_Delet" Content="Отчистить" Background="Red" RenderTransformOrigin="0.571,-3.4" Grid.Column="1" Margin="237,22,0,0" Height="18" VerticalAlignment="Top" HorizontalAlignment="Left" Width="61" />
+        <TextBlock Height="17" Margin="23,0,858,0" TextWrapping="Wrap" Text="Общий поиск" VerticalAlignment="Top" Grid.Column="1" />
+    </Grid>
+</Window>

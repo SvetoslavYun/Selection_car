@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Selection_car.App" Collapsed="true">
+    <Position X="2.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Selection_car.Area">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQAAEAAAAGAAAAABAARAAAAAAEAAIBAQAEAEABAAAA=</HashCode>
+      <FileName>Areas\Area.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Selection_car.BD_Areas" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Areas\BD_Areas.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Selection_car.BD_Form" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAABAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Car\BD_Car.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Selection_car.Car" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIYABEAAAAAUAEAIAEABAAQSAAEAgEACAQgACAZhAAA=</HashCode>
+      <FileName>Car\Car.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Selection_car.MainWindowCar" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAABQACAQAAAACAAKBAAACCCAAEACAAAQUAACAEAAA=</HashCode>
+      <FileName>Car\WindowCar.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Selection_car.BD_Company" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Company\BD_Company.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Selection_car.Company" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIQKBEAAAQEASAAIAAABAIQAAAkAEAACAQAECARAAAA=</HashCode>
+      <FileName>Company\Company.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Selection_car.MainWindowCompany" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAQAAAQAAAAAAAKBAAgACCAAEAAAAAQAAAiAEAAQ=</HashCode>
+      <FileName>Company\MainWindowCompany.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Selection_car.BD_Driver" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAIAAAAAAAAAAABAAAAAAAIAAAABgA=</HashCode>
+      <FileName>Drivers\BD_Driver.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Selection_car.Driverr" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQABEAAAAAAAAAAAEH1AAQAAAkAgAAAAAAAIAjAAAA=</HashCode>
+      <FileName>Drivers\Driver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Selection_car.MainWindowDriver" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BGAAARAAAQAAAACAAKBAAACCCAAEACAAAQMAAgAEAAA=</HashCode>
+      <FileName>Drivers\MainWindowDriver.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Selection_car.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIEAAAAAIIAAAAAAAAAAAAYEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindow\Window.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Selection_car.Name_Password" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAABAAAAAAAAABACQAAgACBAAAAAAAAAAACBAE=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Selection_car.BD_Order" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQABAAAQgAAARAAAAAAgAAFAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>OrderCars\BD_Order.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Selection_car.Calculator" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>Qob/BwBAJABAAJAEEGABIASCAAAggJAAASgFAABBAAg=</HashCode>
+      <FileName>OrderCars\Calculator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Selection_car.CalculatorWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAsYdAABBIAAOKAAYRAAFAEKExFESBAAAUAAAAABiA=</HashCode>
+      <FileName>OrderCars\CalculatorWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Selection_car.MainWindowOrder" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AnA9YZQABQMAoOEfAZBAAEAO6Ix1CWDAASUAACAVBAQ=</HashCode>
+      <FileName>OrderCars\MainWindowOrder.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Selection_car.OrderCar" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIYFB0BAAABAINAPEGAhABSCACEggJwAASAAAABDAAg=</HashCode>
+      <FileName>OrderCars\OrderCar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Selection_car.OrderVive" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAUAAAAgAAAAEAACBAAQAAAEgAAAABgAAAAAAAAA=</HashCode>
+      <FileName>OrderCars\OrderVive.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Selection_car.To_Order" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OrderCars\To_Order.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Selection_car.BD_User" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAABAA=</HashCode>
+      <FileName>User\BD_User.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Selection_car.MainWindowUser" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAATAAAQAAAAAAAKBAAAACCAAEAAgAAQACAiAEAQA=</HashCode>
+      <FileName>User\MainWindowUser.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Selection_car.User" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQAAEAEAAAAAAAAAAABAAQAAIEAAAASEQAAAABAAAA=</HashCode>
+      <FileName>User\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Selection_car.Areas.AreasWindow" BaseTypeListCollapsed="true">
+    <Position X="5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAQAAAQAAAAAAAKBAAACCCACEAAAAAQUAACAEAAE=</HashCode>
+      <FileName>Areas\AreasWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Selection_car.Properties.Resources" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Selection_car.Properties.Settings" Collapsed="true">
+    <Position X="2.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object">
+    <Position X="11.5" Y="1.25" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

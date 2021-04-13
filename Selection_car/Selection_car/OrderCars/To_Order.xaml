@@ -1,0 +1,15 @@
+﻿<Window x:Class="Selection_car.To_Order"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Selection_car"
+        mc:Ignorable="d"
+        Title="To_Order" Height="176.8" Width="210.4">
+    <Grid Background="#FFB8C0C0">
+        <TextBlock HorizontalAlignment="Center" Height="23" Margin="21,10,21,0" TextWrapping="Wrap" Text="Введите данные для поиска" VerticalAlignment="Top" Width="160" />
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="33,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
+        <Button x:Name="button" Content="Поиск" HorizontalAlignment="Left" Margin="33,101,0,0" VerticalAlignment="Top" Width="130" Click="button_Click" Background="#FF656F6F"/>
+
+    </Grid>
+</Window>
